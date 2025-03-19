@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://rjjunsawi4.execute-api.us-east-1.amazonaws.com/test/manageEmployees';
+const API_URL = 'https://rjjunsawi4.execute-api.us-east-1.amazonaws.com/test/employees';
 
 export const fetchEmployees = async () => {
   return axios.get(API_URL);

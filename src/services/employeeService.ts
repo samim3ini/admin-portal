@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_Emp_URL = 'https://rjjunsawi4.execute-api.us-east-1.amazonaws.com/test/employees';
-const API_ATT_URL = 'https://rjjunsawi4.execute-api.us-east-1.amazonaws.com/test/attendance';
+const API_ATTEN_URL = 'https://rjjunsawi4.execute-api.us-east-1.amazonaws.com/test/attendance';
 
 export const fetchEmployees = async () => {
   return axios.get(API_Emp_URL);
@@ -24,5 +24,5 @@ export const deleteEmployee = async (employeeID: string) => {
 };
 
 export const fetchAttendanceRecords = async () => {
-    return axios.get(API_ATT_URL);
+    return axios.get(API_ATTEN_URL);
 };

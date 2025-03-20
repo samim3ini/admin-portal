@@ -13,6 +13,7 @@ import {
 import { fetchAttendanceRecords } from '../services/employeeService'; // Create this service function
 
 interface AttendanceRecord {
+  imagebase64?: string;
   employeeID: string;
   attenDate: string;
   checkInTime: string | null;
@@ -47,6 +48,7 @@ const AttendanceDashboard: React.FC = () => {
         <Table aria-label="attendance table">
           <TableHead sx={{ bgcolor: 'primary.light' }}>
             <TableRow>
+              <TableCell align="center" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>Image</TableCell>
               <TableCell align="center" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>Employee ID</TableCell>
               <TableCell align="center" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>Date</TableCell>
               <TableCell align="center" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>Check-In Time</TableCell>
@@ -56,6 +58,7 @@ const AttendanceDashboard: React.FC = () => {
           <TableBody>
             {records.map((record) => (
               <TableRow key={`${record.employeeID}-${record.attenDate}`}>
+                <TableCell align="center">{record.image}</TableCell>
                 <TableCell align="center">{record.employeeID}</TableCell>
                 <TableCell align="center">{record.attenDate}</TableCell>
                 <TableCell align="center">{record.checkInTime ? new Date(record.checkInTime).toLocaleTimeString() : 'N/A'}</TableCell>
